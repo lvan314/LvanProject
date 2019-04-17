@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="/static/css/mui.css" rel="stylesheet" />
+		<link href="/static/css/commnon.css" rel="stylesheet" />
+		<link href="/static/css/chat_room.css" rel="stylesheet" />
+		<script src="/static/javascript/jquery-3.2.1.js"></script>
+		<script src="/static/javascript/mui.js"></script>
+		<script src="/static/javascript/common.js"></script>
+		<script src="/static/javascript/chattouser.js"></script>
+	</head>
+	<body onresize="document.activeElement.scrollIntoView(true);">
+		<!-- 主界面菜单同时移动 -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav">
+					<div class="mui-icon mui-icon-back mui-pull-left" id="back"></div>
+					<h1 class="mui-title">用户</h1>
+				</header>
+				<div>
+					<div id="content">
+						<div class="mui-scroll-wrapper mui-content" id="pullrefresh">
+							<div class="mui-scroll" id="scroll">
+								<!--这里放置真实显示的DOM内容-->
+								<ul class="ul-content">
+                                    <!--<li class="content-left">
+                                        <img src="/static/image/1.jpg"/>
+                                        <div><img src="/static/image/1.jpg" class="image-content"/></div>
+                                    </li>-->
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="takephoto_wrap">
+						<canvas id='canvas' style="width: 200px;height: 250px;"></canvas>
+						<video style="width: 200px;"></video><br>
+						<button id="takingphoto">OK</button>
+					</div>
+					<!--上传图片表单 -->
+					<form class='sendphotoform' id="sendphotoform" method="post" enctype="multipart/form-data" onsubmit="return send() ">
+						<input id="choosephoto" type="file" name="image" accept="image/*" />
+						<input type="text" id="volunteerid" name="volunteerid" value="" />
+						<input type="submit" id="imageSubmit" name="Submit" value="上传" />
+					</form>
+					<div id="input-wrap">
+						<div class="input-text">
+							<input type="text" id="sendtouser">
+						</div>
+						<div id="message-wrap">
+							<div><img src="/static/icon/语音.png" /></div>
+							<div id="imager"><img src="/static/icon/图片.png" /></div>
+							<div id="takephoto"><img src="/static/icon/相机.png" /></div>
+							<div><img src="/static/icon/表情.png" /></div>
+							<div><img src="/static/icon/添加.png" /></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>
